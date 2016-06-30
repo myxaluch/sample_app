@@ -15,7 +15,8 @@
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
-# See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+# See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuratio
+require 'rails_helper'
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -38,6 +39,7 @@ RSpec.configure do |config|
     # a real object. This is generally recommended, and will default to
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
+
   end
 
 # The settings below are suggested to provide a good initial experience
@@ -93,4 +95,5 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  config.include Capybara::DSL
 end
