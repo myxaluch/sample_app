@@ -17,7 +17,6 @@
 /tmp
 
 # Ignore another files
-database.yml
 doc/
 *.swp
 *~
