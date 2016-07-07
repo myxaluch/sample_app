@@ -18,4 +18,11 @@ module SessionsHelper
     remember_token = User.encrypt(cookies[:remember_token])
     @current_user ||= User.find_by(remember_token: remember_token)
   end
+
+  def sign_out
+    current_user.update_attribute(:remember_token,
+                                  nil)
+    cookies.delete(:remember_token)
+    self.current_user = nil
+  end
 end
